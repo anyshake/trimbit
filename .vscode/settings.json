@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "**/project.sigasi": "jsonc",
+        "**/.sigasi/**/compilation.log": "shellscript",
+        "**/.sigasi/**/compilation.plan": "json",
+        "*.h": "c",
+        "compare": "cpp"
+    }
+}
