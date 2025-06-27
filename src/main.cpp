@@ -66,7 +66,7 @@ void peri_init(void) {
     ads1262_reg_mode_0.run_mode = ADS1262_REG_MODE_0_RUN_MODE_CONTINUOUS;
     ads1262_reg_set_mode_0(&ads1262_reg_mode_0);
     ads1262_reg_mode_2_t ads1262_reg_mode_2 = ads1262_reg_new_mode_2();
-    ads1262_reg_mode_2.dr = ADS1262_REG_MODE_2_DR_10;
+    ads1262_reg_mode_2.dr = ADS1262_REG_MODE_2_DR_1200;
     ads1262_reg_set_mode_2(&ads1262_reg_mode_2);
 
     ssd1306_init();
@@ -89,7 +89,7 @@ void handle_check_calib_data(void) {
     eeprom_read((uint8_t*)&calib_factors_status, EEPROM_OFFSET_CALIB_STATUS, sizeof(calib_factors_status));
     if (calib_factors_status == 1) {
         ssd1306_display_string(0, 0, "> Calib Data Exists", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
-        ssd1306_display_string(0, 1, "> Continue in 5 sec", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
+        ssd1306_display_string(0, 1, "> Continue in 10 sec", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
         mcu_utils_delay_ms(5000, false);
     }
 }
@@ -136,7 +136,7 @@ void handle_calibrate_channel_1(uint8_t calib_data[3]) {
 
     ssd1306_clear();
     ssd1306_display_string(0, 0, "INFO:", SSD1306_FONT_TYPE_ASCII_8X16, SSD1306_FONT_DISPLAY_COLOR_WHITE);
-    ssd1306_display_string(0, 4, "Complete in 20 sec!", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
+    ssd1306_display_string(0, 4, "Complete in 10 sec!", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
     ssd1306_display_string(0, 5, "Set OPTIONS B1 to 0", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
 
     while (mcu_utils_gpio_read(OPTIONS_B1_PIN)) {
@@ -165,7 +165,7 @@ void handle_calibrate_channel_2(uint8_t calib_data[3]) {
 
     ssd1306_clear();
     ssd1306_display_string(0, 0, "INFO:", SSD1306_FONT_TYPE_ASCII_8X16, SSD1306_FONT_DISPLAY_COLOR_WHITE);
-    ssd1306_display_string(0, 4, "Complete in 20 sec!", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
+    ssd1306_display_string(0, 4, "Complete in 10 sec!", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
     ssd1306_display_string(0, 5, "Set OPTIONS B2 to 0", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
 
     while (mcu_utils_gpio_read(OPTIONS_B2_PIN)) {
@@ -194,7 +194,7 @@ void handle_calibrate_channel_3(uint8_t calib_data[3]) {
 
     ssd1306_clear();
     ssd1306_display_string(0, 0, "INFO:", SSD1306_FONT_TYPE_ASCII_8X16, SSD1306_FONT_DISPLAY_COLOR_WHITE);
-    ssd1306_display_string(0, 4, "Complete in 20 sec!", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
+    ssd1306_display_string(0, 4, "Complete in 10 sec!", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
     ssd1306_display_string(0, 5, "Set OPTIONS B3 to 0", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
 
     while (mcu_utils_gpio_read(OPTIONS_B3_PIN)) {
