@@ -54,7 +54,7 @@ void peri_init(void) {
 
     mcu_utils_i2c_init(false);
     mcu_utils_spi_init(false);
-    mcu_utils_uart_init(9600, false);
+    mcu_utils_uart_init(115200, false);
 
     ads1262_init(ADS1262_CTL_PIN, ADS1262_INIT_CONTROL_TYPE_HARD);
     ads1262_reset(ADS1262_CTL_PIN, ADS1262_RESET_RESET_TYPE_HARD, false);
@@ -89,7 +89,7 @@ void handle_check_calib_data(void) {
     eeprom_read((uint8_t*)&calib_factors_status, EEPROM_OFFSET_CALIB_STATUS, sizeof(calib_factors_status));
     if (calib_factors_status == 1) {
         ssd1306_display_string(0, 0, "> Calib Data Exists", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
-        ssd1306_display_string(0, 1, "> Continue in 10 sec", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
+        ssd1306_display_string(0, 1, "> Continue in 5 sec", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
         mcu_utils_delay_ms(5000, false);
     }
 }
