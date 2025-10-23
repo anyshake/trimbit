@@ -129,8 +129,8 @@ void handle_calibrate_channel_1(uint8_t calib_data[3]) {
     ssd1306_display_string(0, 5, "Calibrating EHZ...", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
 
     ads1262_reg_inpmux_t ads1262_reg_inpmux = ads1262_reg_new_inpmux();
-    ads1262_reg_inpmux.mux_p = ADS1262_REG_INPMUX_AIN0;
-    ads1262_reg_inpmux.mux_n = ADS1262_REG_INPMUX_AIN1;
+    ads1262_reg_inpmux.mux_n = ADS1262_REG_INPMUX_AIN0;
+    ads1262_reg_inpmux.mux_p = ADS1262_REG_INPMUX_AIN1;
     ads1262_reg_ofcal_t ads1262_reg_ofcal = ads1262_reg_new_ofcal();
     get_ofcal_calib_data(ADS1262_CTL_PIN, &ads1262_reg_inpmux, &ads1262_reg_ofcal);
 
@@ -158,8 +158,8 @@ void handle_calibrate_channel_2(uint8_t calib_data[3]) {
     ssd1306_display_string(0, 5, "Calibrating EHE...", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
 
     ads1262_reg_inpmux_t ads1262_reg_inpmux = ads1262_reg_new_inpmux();
-    ads1262_reg_inpmux.mux_p = ADS1262_REG_INPMUX_AIN2;
-    ads1262_reg_inpmux.mux_n = ADS1262_REG_INPMUX_AIN3;
+    ads1262_reg_inpmux.mux_n = ADS1262_REG_INPMUX_AIN2;
+    ads1262_reg_inpmux.mux_p = ADS1262_REG_INPMUX_AIN3;
     ads1262_reg_ofcal_t ads1262_reg_ofcal = ads1262_reg_new_ofcal();
     get_ofcal_calib_data(ADS1262_CTL_PIN, &ads1262_reg_inpmux, &ads1262_reg_ofcal);
 
@@ -187,8 +187,8 @@ void handle_calibrate_channel_3(uint8_t calib_data[3]) {
     ssd1306_display_string(0, 5, "Calibrating EHN...", SSD1306_FONT_TYPE_ASCII_8X6, SSD1306_FONT_DISPLAY_COLOR_WHITE);
 
     ads1262_reg_inpmux_t ads1262_reg_inpmux = ads1262_reg_new_inpmux();
-    ads1262_reg_inpmux.mux_p = ADS1262_REG_INPMUX_AIN4;
-    ads1262_reg_inpmux.mux_n = ADS1262_REG_INPMUX_AIN5;
+    ads1262_reg_inpmux.mux_n = ADS1262_REG_INPMUX_AIN4;
+    ads1262_reg_inpmux.mux_p = ADS1262_REG_INPMUX_AIN5;
     ads1262_reg_ofcal_t ads1262_reg_ofcal = ads1262_reg_new_ofcal();
     get_ofcal_calib_data(ADS1262_CTL_PIN, &ads1262_reg_inpmux, &ads1262_reg_ofcal);
 
